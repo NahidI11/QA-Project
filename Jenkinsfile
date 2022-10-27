@@ -10,11 +10,6 @@ node {
 
          sh "bash setup.sh"
     }
-    
-    stage('Test') {
-            steps {
-                sh "bash test.sh"
-            }
 
     stage('Build image') {
         
@@ -24,12 +19,5 @@ node {
     stage('Run container') {
         
         sh "bash run.sh"
-    }
-   
-        post {
-        always {
-            junit 'test_reports/*_junit_report.xml'
-            cobertura autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: 'test_reports/*_coverage.xml', conditionalCoverageTargets: '70, 0, 0', failUnhealthy: false, failUnstable: false, lineCoverageTargets: '80, 0, 0', maxNumberOfBuilds: 0, methodCoverageTargets: '80, 0, 0', onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false
-        }
     }
 }
