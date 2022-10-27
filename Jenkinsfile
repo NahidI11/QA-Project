@@ -1,6 +1,5 @@
-node {
-    def app
-
+pipeline {
+    agent any
     stage('Clone repository') {
         
     checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [[$class: 'CleanBeforeCheckout', deleteUntrackedNestedRepositories: true]], userRemoteConfigs: [[url: 'https://github.com/NahidI11/QA-Project.git']]])
