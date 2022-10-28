@@ -11,7 +11,7 @@ node {
                     def imageName = "myapp"
                     env.imageName = "${imageName}"
                     def oldImageID = sh( 
-                                            script: 'sudo docker images -qf reference=\${imageName}',
+                                            script: 'docker images -qf reference=\${imageName}:\${imageTag}',
                                             returnStdout: true
                                         )
 
