@@ -13,27 +13,27 @@ pipeline {
     stages {
         stage('Setup') {
             steps {
-                sh "bash jenkins/setup.sh"
+                sh "bash setup.sh"
             }
         }
         stage('Test') {
             steps {
-                sh "bash jenkins/test.sh"
+                sh "bash test.sh"
             }
         }
         stage('Build') {
             steps {
-                sh "bash jenkins/build.sh"
+                sh "bash build.sh"
             }
         }
         stage('Push') {
             steps {
-                sh "bash jenkins/push.sh"
+                sh "bash push.sh"
             }
         }
         stage('Deploy') {
             steps {
-                sh "bash jenkins/deploy.sh"
+                sh "bash deploy.sh"
             }
         }
     }
