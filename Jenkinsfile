@@ -10,7 +10,7 @@ node {
     checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [[$class: 'CleanBeforeCheckout', deleteUntrackedNestedRepositories: true]], userRemoteConfigs: [[url: 'https://github.com/NahidI11/QA-Project.git']]])
     }
     
-    stages {
+    stage {
         stage('Setup') {
             steps {
                 sh "bash setup.sh"
