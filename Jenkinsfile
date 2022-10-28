@@ -1,5 +1,5 @@
-pipeline {
-    agent any
+node {
+    def app
     environment {
         DOCKER_HUB_CREDS = credentials("DOCKER_HUB_CREDS")
         DATABASE_URI = credentials("DATABASE_URI")
