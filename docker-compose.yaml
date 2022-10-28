@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  frontend:
+    build: ./website
+    image: ${DOCKER_HUB_CREDS_USR}/notes-app:latest
+    container_name: notes-app
+    ports:
+    - target: 5000
+      published: 80
+  environment:
+      DATABASE_URI:
+      CREATE_SCHEMA:
+    ports:
+    - target: 5000
+      published: 5000
